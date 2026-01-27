@@ -5,6 +5,7 @@ const connectDB = require("./config/db.js");
 
 // Routs:
 const authRoutes = require("./routes/authRoutes.js");
+const histostainRoutes = require("./routes/histostainRoutes.js");
 
 require("dotenv").config();
 connectDB();
@@ -21,6 +22,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api/auth", authRoutes);
+app.use("/api/requests", histostainRoutes);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
